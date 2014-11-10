@@ -1,4 +1,7 @@
 <!DOCTYPE HTML>
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if !IE]><html><![endif]-->
+
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -8,6 +11,9 @@
 		<script src="js/hideaddresbar.js"></script>
 		<!-- Add media query support for IE8 and under. Must place media queries in external stylesheet -->
 		<scrip src="js/respond.min.js"></script>
+		<!-- Using picturefill to load conditional images and matchmedia to provide support for IE8 and below + older browsers -->
+		<script src="js/picturefill.js"></script>
+		<script src="js/matchmedia.js"></script>
 		<title>Brigitta's portfolio</title>
 		<link href='http://fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="./css/style.css"/>
@@ -31,25 +37,43 @@
 		<div id="container-nav">
 		<section id="nav"  class="wrapper">
 			<h3>Brigitta Glanz</h3>
-			<!-- style later
+			<!-- Checkbox Hack markup -->
+		        <input type="checkbox" id="toggle" />
+		        <label for="toggle" onclick>Menu</label>
+		        <!-- /Checkbox Hack markup -->
 				<nav>
-					<ul>
-						<li>Portfolio</li>
-						<li>Resume</li>
-						<li>LinkedIn Profile</li>
-						<li>Contact</li>
-					</ul>
-				</nav>
-				-->
+		            <ul>
+		                <li><a href="#portfolio">Portfolio</a></li>
+		                <li><a href="#resume">Resume</a></li>
+		                <li><a href="https://www.linkedin.com/pub/brigitta-glanz/7/218/455">LinkedIn Profile</a></li> 
+		                <li><a href="#contact">Contact</a></li>
+		            </ul>
+		        </nav>
+				
 		</section>	
 		</div>
 		
 
 		<div id="container-header">
 		<header id="masthead" class="wrapper">	
+			
+
+
 			<h1>Hello, I am Brigitta</h1>
 
 			<h2>I'm a project manager/designer from Hungary, living in Portland, Oregon.</h2>
+
+			<figure id="gb"> 
+    		<div data-picture data-alt="Brigitta Glanz">
+        <div data-src="img/gb-s.jpg"></div>
+        <div data-src="img/gb-m.jpg" data-media="(min-width: 45em)"></div>
+        <div data-src="img/gb-l.jpg" data-media="(min-width: 60em)"></div>
+        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+        <noscript>
+            <img src="../img/gb-s.jpg" alt="Brigitta Glanz">
+        </noscript>
+    </div>
+</figure>
 		</header>
 		</div>	
 		
@@ -64,24 +88,27 @@
 					</header>
 				<article class ="group wrapper">
 					<h4>PM at InforMed.hu </h4>
-					
-						<figure>
-						<img src="img/informed-main.png">	
-						</figure>
+						<a href="http://informed.hu" target="_blank">
+							<figure>
+							<img src="img/informed-main.png">	
+							</figure>
+						</a>
 				</article>
 				<article class="group wrapper">	
 					<h4>PCS projects</h4>
-							
-						<figure>
-						<img src="img/howtomake.png">
-						</figure>
+						<a href="http://wavon.github.io/drinkup" target="_blank">
+							<figure>
+							<img src="img/drinkup.png">
+							</figure>
+						</a>	
 				</article>
 				<article class="group wrapper">		
 					<h4>Photography</h4>
-							
+						<a href="http://glanzb.github.io/treehouse"target="_blank">
 						<figure>
-						<img src="img/gb-photo.jpg">
+						<img src="img/howtomake.png">
 						</figure>
+						</a>	
 				</article>
 				</section>
 
@@ -131,7 +158,7 @@
 					</div>
 					</article>
 					<footer class="wrapper">
-					<p>For a full work history, have a look at my LinkedIn Profile</p>
+					<p>For more information about me, have a look at my <a href="https://www.linkedin.com/pub/brigitta-glanz/7/218/455" target="_blank"> LinkedIn Profile</a>.</p>
 					</footer>
 
 				</section>
@@ -140,8 +167,28 @@
 		</div>
 
 		<div id="container-footer">
+		<form id="contact">
+    <fieldset class="wrapper">
+        <legend>Contact Me</legend>
+            <ul class="group">
+                <li class="name">
+                    <!-- <label for="name" >Your Name</label> -->
+                    <input type="text" id="name" name="name" placeholder="Your name"/>
+                </li>
+                <li class="email">
+                   <!--  <label for="email">Your Email</label> -->
+                    <input type="email" id="email" name="email" placeholder="Your email"/>
+                </li>
+                <li class="message">
+                    <!-- <label for="message">Say Hello</label> -->
+                    <textarea id="message" name="message" placeholder="What's on your mind?"></textarea>
+                </li>
+            </ul>
+        <input class="send" type="submit" name="submit" value="Send" />
+    </fieldset>
+</form>
 			<footer id="colophon">	
-			<p>©2014 all rights reserved. Fill out a form here to get in touch.</p>
+			<p>©2014 all rights reserved. </p>
 			</footer>
 		</div>
 

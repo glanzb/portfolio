@@ -263,6 +263,87 @@ h6 {
 	margin: 0 18px;
 }
 
+#nav h3 {
+	text-transform: capitalize;
+		}
+		
+#nav {
+		    padding: .65em 0;
+		}
+	
+#nav h3 {
+		    float: left;
+		    text-transform: capitalize; 
+		}
+	
+#nav ul {
+		    list-style: none;
+		    padding: 0;
+		    border-bottom: 1px solid #eee;
+		    margin: .65em 0 .39em;
+		}
+
+#nav li {
+		   border-top: 1px solid #eee;
+		}
+	
+#nav a {
+		   display: block;
+		   font-size: 1.063em;
+		   color: #333;
+		   text-decoration: none;
+		   padding: .975em 1.3em; 
+		}
+	
+#nav a:hover {
+		   background: #f8f8f8;
+		}
+
+#nav nav {
+		    height: 0;
+		    overflow: hidden;
+		}
+/* ******************************************
+    Advanced Checkbox Hack
+****************************************** */
+
+body { 
+    -webkit-animation: bugfix infinite 1s; 
+}
+
+@-webkit-keyframes bugfix {
+    from {padding: 0;} 
+    to {padding: 0;} 
+}
+
+/* Hide <nav> off-screen */
+
+#nav input[type=checkbox] {
+    position: absolute;
+    top: -999em;
+    left: -999em;
+}
+
+/* restore label for checkbox and add img to it */
+#nav label { 
+    display: block;
+    background: url("../img/menu-icon.png") no-repeat right center;
+    background-size: contain;
+    text-indent: -999em;
+    cursor: pointer;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+}
+
+/* Show <nav> */
+
+#nav input[type=checkbox]:checked ~ nav {
+    height: auto;
+    overflow: hidden;  
+}
+			
 #masthead {
 	color: white;
 	width: 80%;
@@ -274,7 +355,7 @@ h6 {
 
 #container-header {
 	background: #352a38;
-	height: 300px;
+	height: 380px;
 	width: 100%;
 }
 
@@ -323,11 +404,105 @@ figure,
     box-shadow: 0 0 .325em .13em rgba( 0, 0, 0, .1 );
     padding: .975em; /* 3/4 of 1.3 */
 }
+/* Headshot */
 
-section footer {
-    clear: both;
+#gb {
+    width: 25%;
+    height: 0;
+    padding-bottom: 27.5%;
+    background: transparent;
+    -moz-box-shadow: 0 0 0 0 rgba( 0, 0, 0, .1 );
+    -webkit-box-shadow: 0 0 0 0 rgba( 0, 0, 0, .1 );
+    box-shadow: 0 0 0 0 rgba( 0, 0, 0, .1 );
     }
 
+#gb img {
+    width: 100%;
+    }
+
+
+/* Form / Basic Layout */
+
+form {
+    padding: 0 0 1.3em;
+    }
+    
+form ul {
+    list-style: none;
+    padding: 1.3em 0 0;
+    }
+    
+form li {
+    padding: 0 0 .65em;
+    }
+	
+legend {
+	font-size: 1.382em; 
+	line-height: 1.223;
+	}
+		    
+label {
+    display: block;
+	font-size: 1em;
+	line-height: 1.56;
+    padding: 0 0 .325em;
+	}
+		
+legend, label {      
+	font-weight: 300;
+	text-transform: uppercase;
+	color: #fff;
+	}
+	
+input,
+textarea {
+    display: block;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.3;
+	font-weight: 500;
+    padding: .65em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    padding-bottom: 10%;
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+    }
+
+.send {
+    display: inline-block;
+    max-width: 30em;
+    font-size: 1em;
+    line-height: 1;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    background: #0074b0;
+    margin: .65em .26em;
+    padding: .975em;
+    border: 0;
+    border-radius: 1.3em;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, .65);
+    }
+    
+.send:hover {
+    background: #6f6f6f;
+    }
+    
+.send:active,
+.send:focus {
+    background: #555;
+    }
 
 /* Float Clearing http://nicolasgallagher.com/micro-clearfix-hack, makes the browser think that there are items where there are not*/
 /* in html, add group class to the items that we dont want to fix */
@@ -342,7 +517,20 @@ section footer {
     *zoom: 1; /* 3 */
     }
 
+	
+/* Creates hover effect on Portfolio images */
+	#portfolio figure:hover,
+	.box:hover {
+	    -moz-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	    -webkit-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	    box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	}
 
+	/* Image Offset for Indication of Linked Content */
+
+	#portfolio figure:hover {
+	    bottom: .26em;
+	}
 
 /* ******************************************
 	Print Styles
@@ -398,15 +586,137 @@ section footer {
             margin: 0 5.5%;
         }
 
+    #nav {
+        padding: 0;
+    }
+
+    #nav h3 {
+         margin: .39em 1.3em 0 0;
+    }
+
+	#nav label {
+        display: none;
+    } 
+    /* Show <nav> on-screen. */
+
+    #nav nav {
+        height: auto;
+        overflow: visible;
+    }
+
+    /* make nav list inline on wide screens */
+
+    #nav ul {
+        border: 0;
+        margin: 0;
+        }
+	
+	#nav li {
+        display: inline;
+        border: 0;
+    }
+
+    #nav a {
+        display: inline-block;
+        }
+
+
+    #container-header {
+		background: #352a38 url("../img/repulo copy.jpg") no-repeat top center;
+	    padding:5% 0;
+		-webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    background-size: cover;
+	}
+
 	#portfolio article,
 	#resume article {
 		float:left;
 		width:33.333%;
 	}
+
+	.name, .email {
+    float: left;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    
+.name {
+    padding-right: .65em;
+    }
+    
+.email {
+    padding-left: .65em;
+    }
+    
+.send {
+    width: 48.6%;
+    }
 	
 }
 
+ /* ******************************************
+	Media Queries for screen less than 720px
+****************************************** */
+
+@media screen and (max-width: 45em) {
+		#container-header {
+		    background: #352a38 url("../img/repulo-s.jpg") no-repeat top left;
+			-webkit-background-size: cover;
+		    -moz-background-size: cover;
+		    background-size: cover;
+			padding: 10% 0;
+		}
+	}
 
 
-	
+ /* ******************************************
+	new breakpoint for form
+****************************************** */
+
+@media (min-width: 60em) {
+
+.name, .email {
+    padding-right: 1.3em;
+    padding-left: 0;
+    clear: both;
+    }
+    
+.message textarea {
+    width: 50%;
+    }
+    
+.send {
+    width: 15%;
+    }
+    
+}
+
+	/********************************************
+	Fluid Media
+	********************************************/
+
+	figure {
+	    position: relative;
+	}
+
+	figure img,
+	figure object,
+	figure embed,
+	figure video {
+	    display: block;
+	    max-width: 100%; 
+	}
+
+	img {
+	    border: 0;
+	    -ms-interpolation-mode: bicubic;
+	}
+
+	/* 
+	interpolation-mode
+	http://css-tricks.com/ie-fix-bicubic-scaling-for-images/
+	 */	
 
