@@ -8,6 +8,7 @@ html {
 
  body {
  	font-family: "Gudea", sans-serif;
+ 	color: #0A2638;
  }
 
 #resume li {
@@ -20,10 +21,15 @@ html {
  	font-weight: 400;
  }
 
-h1, h2 {
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .65);
+h1, h2, h3 {
+		font-family: 'Lora', serif;
+		font-style: italic;
+			font-weight: 400;
   }
 
+h1, h2, {
+	text-shadow: 0 2px 2px rgba(0, 0, 0, .65);
+}
 h1 {
 		font-size: 2.126em; /* 2 x 1.063 = 3.189em */
 		line-height: 1.223;
@@ -34,7 +40,7 @@ h2 {
 		line-height: 1.223;
 }
 
-h3, h4 {      
+h4 {      
 	font-weight: 400;
 	text-transform: uppercase;
 		}
@@ -76,24 +82,38 @@ h6 {
 
 #masthead {
 	  color: white;
+	  padding-top: 20px;
+	  padding-bottom: 240px;
 }
 
-#masthead, #resume {
-	background: url("../img/repulo.jpg");
+#masthead.container{
+	background-color: rgb(21, 30, 47);
+}
+
+#masthead {
+	background: url("../img/oregon.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-  background-position: center -200px;
+  background-position: right center;
   background-size: cover;
 }
 
 #resume {
+	background: url("../img/nightlights.jpg");
 	background-position: center 0px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  background-size: cover;
 }
 
 #portfolio {
 background: url("../img/code.jpg");
 background-repeat: no-repeat;
 background-size: cover;
+}
+
+.jumbotron #resumetext {
+	background-color: red;
 }
 
 .list-box ul {
@@ -133,6 +153,13 @@ figure,
     box-shadow: 0 0 .325em .13em rgba( 0, 0, 0, .1 );
     padding: .975em; /* 3/4 of 1.3 */
 }
+.list-box {
+    background: transparent;
+  }
+ .list-box {
+ 	color: #fff;
+ }
+
 /* Hover effect on Portfolio images */
 	#portfolio figure:hover,
 	.box:hover {
